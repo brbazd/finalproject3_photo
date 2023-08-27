@@ -298,7 +298,7 @@
     </section>
 
     @if (count($more_photos) > 0)
-        <div class="max-w-7xl mx-auto py-10 px-2 lg:px-4">
+        <div class="max-w-7xl mx-auto pt-10 pb-20 px-2 lg:px-4">
             <h2 class="text-lg lg:text-2xl font-bold text-gray-800 dark:text-gray-200 py-4">More from this user:</h2>
             <div class="grid grid-cols-4 gap-1 md:gap-4">
                 @foreach ($more_photos as $user_photo)
