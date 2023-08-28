@@ -60,9 +60,11 @@
                             {{ __('My Follows') }}
                         </x-dropdown-link>
 
+                        @if (auth()->user()->role->name === 'admin')
                         <x-dropdown-link :href="route('admin.index')">
                             {{ __('Admin Panel') }}
                         </x-dropdown-link>
+                        @endif
 
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Settings') }}
@@ -132,9 +134,11 @@
                     {{ __('My Follows') }}
                 </x-responsive-nav-link>
 
+                @if (auth()->user()->role->name === 'admin')
                 <x-responsive-nav-link :href="route('admin.index')">
                     {{ __('Admin Panel') }}
                 </x-responsive-nav-link>
+                @endif
 
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Settings') }}
