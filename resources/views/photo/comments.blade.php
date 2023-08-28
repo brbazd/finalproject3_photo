@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <section class="max-w-7xl mx-auto dark:bg-gray-900 py-6 lg:py-12">
+    <section class="max-w-7xl mx-auto dark:bg-gray-900 pt-6 pb-20 lg:pt-12">
         <div class="w-full px-4">
             <form class="mb-6" action="{{route('photos.comment.store',$photo->id)}}" method="post">
                 @csrf

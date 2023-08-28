@@ -17,7 +17,7 @@
             </div>
         </div>
     </header>
-    <div class="max-w-7xl mx-auto py-10 px-2 sm:px-4 lg:px-8">
+    <div class="max-w-7xl mx-auto pt-10 pb-20 px-2 sm:px-4 lg:px-8">
         @if (auth()->user()->following()->count() === 0)
             <div class="text-center text-3xl text-gray-800 dark:text-gray-200 p-20">
                 You aren't following anyone!

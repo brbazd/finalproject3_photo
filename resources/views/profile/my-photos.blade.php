@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <section class="max-w-7xl mx-auto dark:bg-gray-900 py-6 lg:py-12">
+    <section class="max-w-7xl mx-auto dark:bg-gray-900 pt-6 pb-20 lg:pt-12">
         <div class="w-full px-4">
             @if (count($photos) == 0)
                 <div class="mx-auto text-center dark:text-gray-300">

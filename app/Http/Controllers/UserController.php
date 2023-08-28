@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function show(User $user)
     {
-        if ($user->id === auth()->user()->id)
+        if ($user->id === auth()->user()->id || auth()->user()->role->name === 'admin')
         {
             $user->with('photos')->get();
             $photos = $user->photos()->paginate(12);

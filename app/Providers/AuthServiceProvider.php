@@ -27,6 +27,10 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('show-private-photo', function (User $user, Photo $photo) {
             if ($photo->is_private === 1)
             {
+                if($user->role->name === 'admin')
+                {
+                    return true;
+                }
                 return $user->id === $photo->user_id;
             }
             else return true;
