@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    /**
+     * Displays the user and all his public photos.
+     */
     public function show(User $user)
     {
         if ($user->id === auth()->user()->id || auth()->user()->role->name === 'admin')

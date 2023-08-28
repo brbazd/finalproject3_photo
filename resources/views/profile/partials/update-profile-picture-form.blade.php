@@ -36,19 +36,22 @@
                 >{{ __('Saved.') }}</p>
             @endif
 
-            <x-danger-button
-                x-data=""
-                x-on:click.prevent="$dispatch('open-modal', 'confirm-avatar-deletion')"
-            >{{ __('Delete Avatar') }}</x-danger-button>
+            @if (auth()->user()->picture_url !== null)
+                <x-danger-button
+                    x-data=""
+                    x-on:click.prevent="$dispatch('open-modal', 'confirm-avatar-deletion')"
+                >{{ __('Delete Avatar') }}</x-danger-button>
 
-            @if (session('status') === 'profile-picture-deleted')
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600 dark:text-gray-400"
-                >{{ __('Avatar deleted.') }}</p>
+                @if (session('status') === 'profile-picture-deleted')
+                    <p
+                        x-data="{ show: true }"
+                        x-show="show"
+                        x-transition
+                        x-init="setTimeout(() => show = false, 2000)"
+                        class="text-sm text-gray-600 dark:text-gray-400"
+                    >{{ __('Avatar deleted.') }}</p>
+                @endif
+
             @endif
 
         </div>

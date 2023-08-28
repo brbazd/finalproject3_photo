@@ -10,7 +10,7 @@ use Intervention\Image\Facades\Image;
 class ProfilePictureController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Updates the user's profile picture.
      */
     public function update(Request $request)
     {
@@ -61,13 +61,16 @@ class ProfilePictureController extends Controller
 
     }
 
+    /**
+     * Deletes the user's profile picture.
+     */
     public function destroy(Request $request)
     {
         if(auth()->user()->picture_url === null) return redirect(route('profile.edit'));
 
         $img_to_delete = auth()->user()->picture_url;
 
-        File::delete(public_path($img_to_delete));
+        File::delete(public_path('/storage/profiles/images/'.$img_to_delete));
 
         auth()->user()->update(['picture_url' => null]);
 
