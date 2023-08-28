@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\PhotoCommentController;
 use App\Http\Controllers\ProfilePictureController;
 
@@ -61,6 +62,9 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/users/{user:id}/follow',FollowerController::class)->name('follow.user');
     Route::post('/photos/view/{photo:id}/like',LikeController::class)->name('like.photo');
+
+    Route::get('/admin/users',[AdminPanelController::class, 'index'])->name('admin.index');
+    Route::patch('/admin/users/{user:id}/admin_priv',[AdminPanelController::class, 'update'])->name('admin.update');
 
 
 });

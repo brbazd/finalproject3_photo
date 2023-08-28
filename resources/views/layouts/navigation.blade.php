@@ -60,6 +60,10 @@
                             {{ __('My Follows') }}
                         </x-dropdown-link>
 
+                        <x-dropdown-link :href="route('admin.index')">
+                            {{ __('Admin Panel') }}
+                        </x-dropdown-link>
+
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Settings') }}
                         </x-dropdown-link>
@@ -126,6 +130,10 @@
 
                 <x-responsive-nav-link :href="route('profile.follows')">
                     {{ __('My Follows') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('admin.index')">
+                    {{ __('Admin Panel') }}
                 </x-responsive-nav-link>
 
                 <x-responsive-nav-link :href="route('profile.edit')">
